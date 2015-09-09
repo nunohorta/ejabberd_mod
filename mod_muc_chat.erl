@@ -45,9 +45,9 @@ send_muc_message(Stanza, MUCState, RoomJID, FromJID, FromNick) ->
                   "body=", url_encode(binary_to_list(Body))],
           ?INFO_MSG("Sending post request to ~s with body \"~s\"", [PostUrl, Post]),
 	      httpc:request(post, {binary_to_list(PostUrl), [], "application/x-www-form-urlencoded", list_to_binary(Post)},[],[]),
-	      ok;
+	      Stanza;
 	    true ->
-	      ok
+	      Stanza
     end.
 
 %%% The following url encoding code is from the yaws project and retains it's original license.
