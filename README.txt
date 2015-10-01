@@ -6,6 +6,6 @@ Usage:
 modules:
 ...
 
-  mod_muc_chat:
+  mod_post_muc:
   
     post_url: "http://..."
